@@ -132,15 +132,15 @@ function Prompt() {
     }
     else{
       //---------------------------------------------- edit here ------------------------------------------
-      fetch('http://127.0.0.1:5000/get-user/0-0-0-0-0-0-0-0-0-0-0-0-0-0-0')
-        .then(response => response.json())
+      fetch('127.0.0.1:5000/get-user/0-0-0-0-0-0-0-0-0-0-0-0-0-0-0')
+        .then(response => (console.log(response)))
         .then(data => (console.log(data)));
 
       spendings = parseInt(wine)+parseInt(fruits)+parseInt(meat)+parseInt(fish)+parseInt(sweets)+parseInt(gold);
       children = parseInt(kids)+parseInt(teens);
       family_size = marital ? parseInt(children) + 2 : parseInt(children) + 1;
 
-      alert('Feed to api ' + educ+","+income+","+kids+","+teens+","+wine+","+fruits+","+meat+","+fish+","+sweets+","+gold+","+spendings+","+age+","+children+","+marital+","+family_size);
+      // alert('Feed to api ' + educ+","+income+","+kids+","+teens+","+wine+","+fruits+","+meat+","+fish+","+sweets+","+gold+","+spendings+","+age+","+children+","+marital+","+family_size);
       setRestart(true);
       // setHeading("You are a Ballsack") // Replace this with the classification eg. "Home Maintenance Enthusiasts"
       // setSubheading("ballsacks are the thing that hangs on the bottom of the....") // Replace this with the description
