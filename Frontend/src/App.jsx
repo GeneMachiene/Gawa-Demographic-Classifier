@@ -132,9 +132,11 @@ function Prompt() {
     }
     else{
       //---------------------------------------------- edit here ------------------------------------------
-      fetch('http://127.0.0.1:5000/get-user/0-0-0-0-0-0-0-0-0-0-0-0-0-0-0')
-        .then(response => (console.log(response)))
-        .then(data => (console.log(data)));
+      const values = educ+"-"+income+"-"+kids+"-"+teens+"-"+wine+"-"+fruits+"-"+meat+"-"+fish+"-"+sweets+"-"+gold+"-"+spendings+"-"+age+"-"+children+"-"+marital+"-"+family_size
+      console.log(values);
+      fetch(`http://127.0.0.1:5000/get-user/${values}`)
+        .then(response => response.json())
+        .then(data => (setHeading(data.prediction), setSubheading(data.description)));
 
       spendings = parseInt(wine)+parseInt(fruits)+parseInt(meat)+parseInt(fish)+parseInt(sweets)+parseInt(gold);
       children = parseInt(kids)+parseInt(teens);

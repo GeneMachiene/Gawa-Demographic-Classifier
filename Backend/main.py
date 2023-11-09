@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route("/get-user/<user_id>")
 def get_user(user_id):
@@ -51,8 +52,9 @@ def get_user(user_id):
     "prediction" : prediciton_text,
     "description" : description,
   }
-
-  return jsonify(data), 200
+  
+  datajson = jsonify(data) # .headers.add('Access-Control-Allow-Origin', '*')
+  return datajson, 200
 
 
 if __name__ == "__main__":
