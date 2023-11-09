@@ -132,7 +132,7 @@ function Prompt() {
     }
     else{
       //---------------------------------------------- edit here ------------------------------------------
-      fetch('127.0.0.1:5000/get-user/0-0-0-0-0-0-0-0-0-0-0-0-0-0-0')
+      fetch('http://127.0.0.1:5000/get-user/0-0-0-0-0-0-0-0-0-0-0-0-0-0-0')
         .then(response => (console.log(response)))
         .then(data => (console.log(data)));
 
